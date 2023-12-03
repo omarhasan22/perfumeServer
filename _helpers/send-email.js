@@ -1,10 +1,9 @@
 const nodemailer = require('nodemailer');
-const express = require('express');
-const cors = require('cors');
-const config = require('config.json');
-const app = express();
 
-app.use(cors());
+const config = require('config.json');
+
+
+
 module.exports = sendEmail;
 
 async function sendEmail({ to, subject, html, from = config.emailFrom }) {
