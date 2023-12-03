@@ -1,12 +1,12 @@
 ﻿{
     "connectionString": "mongodb+srv://omarhasan22:81195404OMAR@cluster0.e47czbw.mongodb.net/?retryWrites=true&w=majority",
     "secret": "THIS IS USED TO SIGN AND VERIFY JWT TOKENS, REPLACE IT WITH YOUR OWN SECRET, IT CAN BE ANY STRING",
-    "emailFrom": "omarPerfume@mail.com",
+    "host": "smtp.ethereal.email",
+    "port": 587,
     "smtpOptions": {
-        "service": "mail",
         "auth": {
-           "user": "omarPerfume@mail.com",
-            "pass": "Omar.hasan123"
+           "user": "lamar73@ethereal.email",
+            "pass": "PPzdK82wwRMKG9tDRX"
         }
     }
 }
