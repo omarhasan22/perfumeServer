@@ -5,13 +5,9 @@
     "smtpOptions": {
         "host": "smtp-relay.brevo.com",
         "port": 587,
-        "secure": false,
         "auth": {
            "user": "omar.hasan3894@gmail.com",
             "pass": "xsmtpsib-adf43ddf2f5e00976b8f4d853c6b1a6a9a09f28e88668cc49a9ea9f22a139994-fnrwqdLpZxVG54FS"
-        },
-        "tls": {
-            "rejectUnauthorized": false
-          }
+        }
     }
 }
