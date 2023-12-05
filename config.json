@@ -1,14 +1,14 @@
 ﻿{
     "connectionString": "mongodb+srv://omarhasan22:81195404OMAR@cluster0.e47czbw.mongodb.net/?retryWrites=true&w=majority",
     "secret": "THIS IS USED TO SIGN AND VERIFY JWT TOKENS, REPLACE IT WITH YOUR OWN SECRET, IT CAN BE ANY STRING",
-    "emailFrom":"omarPerfume@outlook.com",
+    "emailFrom":"omar.hasan3894@gmail.com",
     "smtpOptions": {
-        "host": "smtp-mail.outlook.com",
+        "host": "smtp-relay.brevo.com",
         "port": 587,
         "secure": false,
         "auth": {
-           "user": "omarPerfume@outlook.com",
-            "pass": "xviafnwxzummdhnk"
+           "user": "omar.hasan3894@gmail.com",
+            "pass": "xsmtpsib-adf43ddf2f5e00976b8f4d853c6b1a6a9a09f28e88668cc49a9ea9f22a139994-fnrwqdLpZxVG54FS"
         },
         "tls": {
             "rejectUnauthorized": false
