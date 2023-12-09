@@ -24,7 +24,7 @@ async function getAll() {
 }
 
 async function getById(id) {
-  const perfume = await getParfume(id);
+  const perfume = await db.Parfume.getParfume(id);
   return basicDetails(perfume);
 }
 
