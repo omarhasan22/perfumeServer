@@ -8,6 +8,7 @@ const validateRequest = require('_middleware/validate-request');
 
 router.post('/add', addSchema, add);
 router.get('/getAll', getAll);
+router.get('/:id', authorize(), getById);
 
 module.exports = router;
 
@@ -37,5 +38,10 @@ function getAll(req, res, next) {
     
 }
 
+function getById(req, res, next) {
+    
+    accountService.getById(req.params.id)
+        .then(account => account ? res.json(account) : res.sendStatus(404))
+        .catch(next);
 
-
+}

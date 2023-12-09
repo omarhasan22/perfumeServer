@@ -2,7 +2,8 @@ const db = require("_helpers/db");
 
 module.exports = {
   add,
-  getAll
+  getAll,
+  getById
 };
 
 async function add(params, origin) {
@@ -22,4 +23,8 @@ async function getAll() {
   return parfume.map((x) => basicDetails(x));
 }
 
+async function getById(id) {
+  const perfume = await getParfume(id);
+  return basicDetails(perfume);
+}
 
