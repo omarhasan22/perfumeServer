@@ -17,7 +17,7 @@ schema.virtual('isExpired').get(function () {
 });
 
 schema.virtual('isActive').get(function () {
-    return !this.revoked && !this.isExpired;
+    return this.revoked && this.isExpired;
 });
 
 module.exports = mongoose.model('RefreshToken', schema);
