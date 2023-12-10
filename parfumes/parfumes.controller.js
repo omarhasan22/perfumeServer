@@ -48,6 +48,7 @@ function getById(req, res, next) {
 }
 
 function getAllTypes(req, res, next) { 
+    console.log("from getAllTypes Controller")
     parfumesService.getAllTypes()
     .then(perfumes => res.json(perfumes))
     .catch(next);
