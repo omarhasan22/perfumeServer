@@ -7,9 +7,10 @@ const validateRequest = require('_middleware/validate-request');
 
 
 router.post('/add', addSchema, add);
+router.get('/getTypes', getAllTypes);
 router.get('/getAll', getAll);
 router.get('/:id', getById);
-router.get('/getTypes', getAllTypes);
+
 
 module.exports = router;
 
