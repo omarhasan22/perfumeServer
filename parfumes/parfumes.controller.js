@@ -10,6 +10,7 @@ router.post('/add', addSchema, add);
 router.get('/getTypes', getAllTypes);
 router.get('/getAll', getAll);
 router.get('/:id', getById);
+router.get('/:type', getByType);
 
 
 module.exports = router;
@@ -52,4 +53,11 @@ function getAllTypes(req, res, next) {
     parfumesService.getAllTypes()
     .then(perfumes => res.json(perfumes))
     .catch(next);
+}
+
+function getByType(req, res, next) {
+    parfumesService.getByType(req.params.typee)
+        .then(account => account ? res.json(account) : res.sendStatus(404))
+        .catch(next);
+
 }
