@@ -35,6 +35,6 @@ async function getById(id) {
 
 async function getAllTypes() {
   const perfume = await db.Parfume.distinct("type");
-  return perfume.map((x) => basicDetails(x));
+  return perfume;
 }
 
