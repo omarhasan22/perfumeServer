@@ -41,7 +41,6 @@ function getAll(req, res, next) {
 }
 
 function getById(req, res, next) {
-console.log("from getByID")
     parfumesService.getById(req.params.id)
         .then(account => account ? res.json(account) : res.sendStatus(404))
         .catch(next);
