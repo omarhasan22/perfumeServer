@@ -10,7 +10,7 @@ const accountService = require('./account.service');
 router.use(cors());
 
 const corsOptions = {
-    origin: 'http://localhost:4200',
+    origin: 'https://perfumeserver.onrender.com/accounts',
     credentials: true,
   };
   
