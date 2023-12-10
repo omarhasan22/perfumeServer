@@ -30,7 +30,7 @@ async function getById(id) {
 }
 
 async function getAllTypes() {
-  const perfume = await db.Parfume.distinct("Type");
+  const perfume = await db.Parfume.find();
   return basicDetails(perfume);
 }
 
