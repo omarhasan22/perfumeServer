@@ -19,7 +19,6 @@ router.post('/validate-reset-token', validateResetTokenSchema, validateResetToke
 router.post('/reset-password', resetPasswordSchema, resetPassword);
 router.get('/', authorize(Role.Admin), getAll);
 router.get('/:id', authorize(), getById);
-router.get('/getAllTypes',getAllTypes)
 router.post('/', authorize(Role.Admin), createSchema, create);
 router.put('/:id', authorize(), updateSchema, update);
 router.delete('/:id', authorize(), _delete);
