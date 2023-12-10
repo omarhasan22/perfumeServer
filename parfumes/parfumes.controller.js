@@ -49,6 +49,6 @@ function getById(req, res, next) {
 
 function getAllTypes(req, res, next) { 
     parfumesService.getAllTypes()
-    .then(accounts => res.json(accounts))
+    .then(perfumes => res.json(perfumes))
     .catch(next);
 }
