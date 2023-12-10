@@ -9,6 +9,12 @@ const accountService = require('./account.service');
 
 router.use(cors());
 
+const corsOptions = {
+    origin: 'http://localhost:4200',
+    credentials: true,
+  };
+  
+  router.use(cors(corsOptions));
 
 // routes
 router.post('/authenticate', authenticateSchema, authenticate);
