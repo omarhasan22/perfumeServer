@@ -8,9 +8,10 @@ const validateRequest = require('_middleware/validate-request');
 
 router.post('/add', addSchema, add);
 router.get('/getTypes', getAllTypes);
+router.get('/:type', getByType);
 router.get('/getAll', getAll);
 router.get('/:id', getById);
-router.get('/:type', getByType);
+
 
 
 module.exports = router;
@@ -56,7 +57,7 @@ function getAllTypes(req, res, next) {
 }
 
 function getByType(req, res, next) {
-    parfumesService.getByType(req.params.typee)
+    parfumesService.getByType(req.params.type)
         .then(account => account ? res.json(account) : res.sendStatus(404))
         .catch(next);
 
