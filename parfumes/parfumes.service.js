@@ -3,8 +3,9 @@ const db = require("_helpers/db");
 module.exports = {
   add,
   getAll,
-  getById,
-  getAllTypes
+  getAllTypes,
+  getById
+  
 };
 
 async function add(params, origin) {
