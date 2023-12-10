@@ -40,7 +40,7 @@ async function getAllTypes() {
 }
 
 async function getByType(type) {
-  const perfume = await db.Parfume.find("type"=type);
+  const perfume = await db.Parfume.find({ type: type });
   return basicDetails(perfume);
 }
 
