@@ -9,6 +9,7 @@ const validateRequest = require('_middleware/validate-request');
 router.post('/add', addSchema, add);
 router.get('/getAll', getAll);
 router.get('/:id', getById);
+router.get('/getAllTypes',getAllTypes)
 
 module.exports = router;
 
@@ -17,6 +18,7 @@ function addSchema(req, res, next) {
     const schema = Joi.object({
         name: Joi.string(),
         company: Joi.string(),
+        type: Joi.string(),
         img: Joi.string(),
         
     });
@@ -44,4 +46,10 @@ console.log("from getByID")
         .then(account => account ? res.json(account) : res.sendStatus(404))
         .catch(next);
 
+}
+
+function getAllTypes(req, res, next) { 
+    parfumesService.getAllTypes()
+    .then(accounts => res.json(accounts))
+    .catch(next);
 }

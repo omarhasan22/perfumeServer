@@ -24,6 +24,7 @@ router.post('/', authorize(Role.Admin), createSchema, create);
 router.put('/:id', authorize(), updateSchema, update);
 router.delete('/:id', authorize(), _delete);
 
+
 module.exports = router;
 
 const accountsKey = 'angular-15-signup-verification-boilerplate-accounts';
@@ -162,9 +163,7 @@ function getAll(req, res, next) {
         .then(accounts => res.json(accounts))
         .catch(next);
 }
-function get(req, res, next) {
-    console.log("done from contoller")
-}
+
 
 function getById(req, res, next) {
     // users can get their own account and admins can get any account

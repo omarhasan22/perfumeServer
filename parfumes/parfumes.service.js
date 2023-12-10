@@ -3,7 +3,8 @@ const db = require("_helpers/db");
 module.exports = {
   add,
   getAll,
-  getById
+  getById,
+  getAllTypes
 };
 
 async function add(params, origin) {
@@ -26,5 +27,10 @@ async function getAll() {
 async function getById(id) {
   const perfume = await db.Parfume.findById(id);
   return basicDetails(perfume);
+}
+
+async function getAllTypes() {
+  const parfume = await db.Parfume.distinct("Type");
+  return parfume.map((x) => basicDetails(x));
 }
 
