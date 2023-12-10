@@ -7,14 +7,6 @@ const authorize = require('_middleware/authorize')
 const Role = require('_helpers/role');
 const accountService = require('./account.service');
 
-router.use(cors());
-
-const corsOptions = {
-    origin: 'https://perfumeserver.onrender.com/accounts',
-    credentials: true,
-  };
-  
-  router.use(cors(corsOptions));
 
 // routes
 router.post('/authenticate', authenticateSchema, authenticate);
