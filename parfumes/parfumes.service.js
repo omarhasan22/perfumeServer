@@ -4,7 +4,8 @@ module.exports = {
   add,
   getAll,
   getAllTypes,
-  getById
+  getById,
+  getByType
   
 };
 
@@ -36,5 +37,10 @@ async function getById(id) {
 async function getAllTypes() {
   const perfume = await db.Parfume.distinct("type");
   return perfume;
+}
+
+async function getByType(type) {
+  const perfume = await db.Parfume.find(type);
+  return basicDetails(perfume);
 }
 
