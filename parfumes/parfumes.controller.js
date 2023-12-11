@@ -57,6 +57,7 @@ function getAllTypes(req, res, next) {
 }
 
 function getByType(req, res, next) {
+    console.log("from controller "+req.params.type)
     parfumesService.getByType(req.params.type)
         .then(account => account ? res.json(account) : res.sendStatus(404))
         .catch(next);
