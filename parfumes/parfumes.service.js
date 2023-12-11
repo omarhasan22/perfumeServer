@@ -24,7 +24,6 @@ function basicDetails(parfume) {
 }
 
 async function getAll() {
-  console.log("from getAll")
   const parfume = await db.Parfume.find();
   return parfume.map((x) => basicDetails(x));
 }
@@ -40,7 +39,7 @@ async function getAllTypes() {
 }
 
 async function getByType(type) {
-  const perfume = await db.Parfume.find({ type: type });
+  const perfume = await db.Parfume.find();
   return perfume.map((x) => basicDetails(x));
 }
 
