@@ -51,6 +51,7 @@ function authenticate(req, res, next) {
 
 function refreshToken(req, res, next) {
     const token = req.cookies.refreshToken;
+    console.log("from account controller refresh "+token)
     const ipAddress = req.ip;
     accountService.refreshToken({ token, ipAddress })
         .then(({ refreshToken, ...account }) => {
