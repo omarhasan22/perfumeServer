@@ -54,7 +54,7 @@ async function refreshToken({ token, ipAddress }) {
     const { account } = refreshToken;
 
     // replace old refresh token with a new one and save
-    const newRefreshToken = generateRefreshToken(account, ipAddress);
+     const newRefreshToken = await generateRefreshToken(account, ipAddress);
     refreshToken.revoked = Date.now();
     refreshToken.revokedByIp = ipAddress;
     refreshToken.replacedByToken = newRefreshToken.token;
