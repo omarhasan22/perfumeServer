@@ -222,7 +222,6 @@ async function getAccount(id) {
 
 async function getRefreshToken(token) {
     const refreshToken = await db.RefreshToken.findOne({ token }).populate('account');
-    console.log("from acc.serv"+refreshToken)
     if (!refreshToken ) throw 'Invalid tokennn';
     return refreshToken;
 }

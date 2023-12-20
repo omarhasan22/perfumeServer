@@ -5,7 +5,8 @@ module.exports = {
   getAll,
   getAllTypes,
   getById,
-  getByType
+  getByType,
+  getByIdA
   
 };
 
@@ -30,7 +31,12 @@ async function getAll() {
 
 async function getById(id) {
   const perfume = await db.Parfume.findById(id);
-  return basicDetails(perfume);
+  return perfume;
+}
+
+async function getByIdA(id) {
+  const perfume = await db.Parfume.findById(id);
+  return perfume.map((x) => basicDetails(x));
 }
 
 async function getAllTypes() {

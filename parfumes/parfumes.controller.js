@@ -11,6 +11,7 @@ router.get('/getTypes', getAllTypes);
 router.get('/getType/:type', getByType);
 router.get('/getAll', getAll);
 router.get('/:id', getById);
+router.get('/A/:id', getByIdA);
 
 
 
@@ -47,7 +48,12 @@ function getById(req, res, next) {
     parfumesService.getById(req.params.id)
         .then(account => account ? res.json(account) : res.sendStatus(404))
         .catch(next);
+}
 
+function getByIdA(req, res, next) {
+    parfumesService.getById(req.params.id)
+    .then(accounts => res.json(accounts))
+    .catch(next);
 }
 
 function getAllTypes(req, res, next) {
