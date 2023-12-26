@@ -20,8 +20,8 @@ async function add(params, origin) {
 }
 
 function basicDetails(parfume) {
-    const { id, name, company, type, img } = parfume;
-    return { id, name, company,type, img };
+    const { id, name, company, type,price, img } = parfume;
+    return { id, name, company,type, price, img };
 }
 
 async function getAll() {

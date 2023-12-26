@@ -23,7 +23,7 @@ function addSchema(req, res, next) {
         name: Joi.string(),
         company: Joi.string(),
         type: Joi.string(),
-        price:Joi.number(),
+        price: Joi.number(),
         img: Joi.string(),
         
     });
