@@ -18,6 +18,8 @@ app.use('/accounts', require('./accounts/accounts.controller'));
 
 app.use('/parfumes', require('./parfumes/parfumes.controller'));
 
+app.use('/payment', require('./payment/payment.controller'));
+
 // swagger docs route
 app.use('/api-docs', require('_helpers/swagger'));
 

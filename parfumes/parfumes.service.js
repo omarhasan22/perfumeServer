@@ -6,7 +6,8 @@ module.exports = {
   getAllTypes,
   getById,
   getByType,
-  getByIdA
+  getByIdA,
+ 
   
 };
 
@@ -18,6 +19,9 @@ async function add(params, origin) {
   // save account
   await parfume.save();
 }
+
+
+
 
 function basicDetails(parfume) {
     const { id, name, company, type,price, img } = parfume;

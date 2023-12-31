@@ -7,6 +7,7 @@ const validateRequest = require('_middleware/validate-request');
 
 
 router.post('/add', addSchema, add);
+router.post('/charge',  charge);
 router.get('/getTypes', getAllTypes);
 router.get('/getType/:type', getByType);
 router.get('/getAll', getAll);
@@ -31,8 +32,14 @@ function addSchema(req, res, next) {
 }
 
 function add(req, res, next) {
-    console.log(req.body)
     parfumesService.add(req.body, req.get('origin'))
+        .then(() => res.json({ message: 'add successful' }))
+        .catch(next);
+}
+
+function charge(req, res, next) {
+    console.log(req.body)
+    parfumesService.charge(req.body)
         .then(() => res.json({ message: 'add successful' }))
         .catch(next);
 }
