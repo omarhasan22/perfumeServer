@@ -1,25 +1,31 @@
 const express = require('express');
 const router = express.Router();
-const paymentService = require('./payment.service');
-const Joi = require('joi');
-const validateRequest = require('_middleware/validate-request');
-
+const sendEmail = require('_helpers/send-email');
 require("dotenv").config(); 
  
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY); 
 
 router.post('/charge', async (req, res) => {
     try {
-      const { accountID, amount, source, description } = req.body;
-  
+      const { amount, source, description, receipt_email, billing_details } = req.body;
+  console.log(req.body)
       const charge = await stripe.charges.create({
-        accountID,
         amount,
         currency: 'usd',
         source,
         description,
+        receipt_email,
       });
+      console.log(charge)
   
+let message= `<p>The payment success with only ${amount}$</p>`;
+
+      await sendEmail({
+        to: receipt_email,
+        subject: 'The payment success '+amount+'$ only',
+        html: `<h4>The payment success</h4>
+              ${message}>`
+    });
       // Handle the success response
       res.status(200).json({ success: true, charge });
     } catch (error) {
