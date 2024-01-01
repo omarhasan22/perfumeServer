@@ -44,7 +44,7 @@ async function getByIdA(id) {
 }
 
 async function getAllTypes() {
-  const perfume = await db.Parfume.distinct("type");
+  const perfume = await db.Parfume.distinct("company");
   return perfume;
 }
 
