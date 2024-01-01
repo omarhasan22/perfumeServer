@@ -71,7 +71,7 @@ function getAllTypes(req, res, next) {
 }
 
 function getByType(req, res, next) {
-    parfumesService.getByType(req.params.type)
+    parfumesService.getByType(req.params.company)
         .then(account => account ? res.json(account) : res.sendStatus(404))
         .catch(next);
 
