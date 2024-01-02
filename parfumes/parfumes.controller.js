@@ -3,11 +3,11 @@ const router = express.Router();
 const parfumesService = require('./parfumes.service');
 const Joi = require('joi');
 const validateRequest = require('_middleware/validate-request');
-
+const authorize = require('_middleware/authorize')
 
 
 router.post('/add', addSchema, add);
-router.post('/charge',authorize() , charge);
+router.post('/charge', authorize() , charge);
 router.get('/getTypes', getAllTypes);
 router.get('/getType/:company', getByType);
 router.get('/getAll', getAll);
